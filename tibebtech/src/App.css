@@ -1,0 +1,70 @@
+/* Global Theme Variables */
+:root {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+  --bs-border-color: #dee2e6;
+  --bs-secondary-bg: #f8f9fa;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #212529;
+  --bs-body-color: #ffffff;
+  --bs-border-color: #495057;
+  --bs-secondary-bg: #343a40;
+}
+
+/* Dark Theme Specific Styles */
+.dark-theme {
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color) !important;
+}
+
+.light-theme {
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color) !important;
+}
+
+/* Bootstrap Dark Theme Overrides */
+[data-bs-theme="dark"] .text-muted {
+  color: #adb5bd !important;
+}
+
+[data-bs-theme="dark"] .bg-light {
+  background-color: var(--bs-secondary-bg) !important;
+}
+
+[data-bs-theme="dark"] .border {
+  border-color: var(--bs-border-color) !important;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Form controls in dark theme */
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+  background-color: var(--bs-secondary-bg);
+  border-color: #0d6efd;
+  color: var(--bs-body-color);
+}
+
+/* Card styling in dark theme */
+[data-bs-theme="dark"] .card {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-border-color);
+}
+
+/* Badge styling adjustments */
+[data-bs-theme="dark"] .badge.bg-light {
+  background-color: var(--bs-secondary-bg) !important;
+  color: var(--bs-body-color) !important;
+}

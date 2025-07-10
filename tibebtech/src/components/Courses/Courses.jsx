@@ -3,8 +3,10 @@ import { Container, Row, Col, Card, Button, Form, Badge } from 'react-bootstrap'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './courses.css';
+import { useTheme } from '../../context/ThemeContext';
 
 const Courses = () => {
+  const { darkMode } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedDifficulty, setSelectedDifficulty] = useState('All');
   const [filteredCourses, setFilteredCourses] = useState([]);
@@ -155,7 +157,7 @@ const Courses = () => {
   };
 
   return (
-    <section className="py-5">
+    <section className={`py-5 ${darkMode ? 'bg-dark text-light' : 'bg-light'}`}>
       <Container>
         <div className="text-center mb-5" data-aos="fade-up">
           <h2 className="fw-bold mb-3">Featured Courses</h2>
@@ -222,7 +224,7 @@ const Courses = () => {
           {filteredCourses.map((course, index) => (
             <Col key={course.id} xs={12} md={6} lg={4}>
               <Card 
-                className="h-100 course-card shadow-sm rounded-4"
+                className={`h-100 course-card shadow-sm rounded-4 ${darkMode ? 'bg-dark text-light border-secondary' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
@@ -248,7 +250,7 @@ const Courses = () => {
                     <Badge className={getDifficultyColor(course.level)}>
                       {course.level}
                     </Badge>
-                    <Badge bg="light" text="dark" className="ms-2">
+                    <Badge bg={darkMode ? "secondary" : "light"} text={darkMode ? "light" : "dark"} className="ms-2">
                       <i className={`${getCategoryIcon(course.category)} me-1`}></i>
                       {course.category}
                     </Badge>

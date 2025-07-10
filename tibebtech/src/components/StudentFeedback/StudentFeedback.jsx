@@ -3,8 +3,11 @@ import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './studentfeedback.css';
+import { useTheme } from '../../context/ThemeContext';
 
 const StudentFeedback = () => {
+  const { darkMode } = useTheme();
+  
   useEffect(() => {
     AOS.init({ duration: 700, easing: 'ease-in-out', offset: 100 });
   }, []);
@@ -93,7 +96,7 @@ const StudentFeedback = () => {
   const stats = getOverallStats();
 
   return (
-    <section className="py-5 bg-light">
+    <section className={`py-5 ${darkMode ? 'bg-secondary text-light' : 'bg-light'}`}>
       <Container>
         <div className="text-center mb-5" data-aos="fade-up">
           <h2 className="fw-bold mb-3">What Our Students Say</h2>
@@ -139,7 +142,7 @@ const StudentFeedback = () => {
           {testimonials.map((testimonial, index) => (
             <Col key={testimonial.id} xs={12} md={6} lg={4}>
               <Card 
-                className="h-100 testimonial-card shadow-sm rounded-4"
+                className={`h-100 testimonial-card shadow-sm rounded-4 ${darkMode ? 'bg-dark text-light border-secondary' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 120}
               >
