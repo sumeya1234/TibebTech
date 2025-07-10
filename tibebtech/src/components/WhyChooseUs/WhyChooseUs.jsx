@@ -35,7 +35,7 @@ const WhyChooseUs = () => {
           {benefits.map((item, index) => (
             <Col key={index} xs={12} md={4}>
               <Card
-                className="h-100 text-center shadow-sm rounded-4 card-hover"
+                className="h-100 text-center shadow-sm rounded-4"
                 data-aos="fade-up"
               >
                 <Card.Body>
