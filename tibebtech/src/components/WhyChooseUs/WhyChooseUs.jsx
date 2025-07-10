@@ -6,7 +6,7 @@ import './whychooseus.css';
 
 const WhyChooseUs = () => {
   useEffect(() => {
-    AOS.init({ duration: 100, easing: 'ease-in-out', offset : 100 });
+    AOS.init({ duration: 800, easing: 'ease-in-out', offset : 100 });
   }, []);
 
   const benefits = [
