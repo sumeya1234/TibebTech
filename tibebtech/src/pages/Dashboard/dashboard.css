@@ -1,0 +1,536 @@
+/* Dashboard Page Layout */
+.dashboard-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.dashboard-page.dark-mode {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+/* Welcome Section */
+.welcome-section h1 {
+  color: #1f2937;
+  font-size: 2.5rem;
+}
+
+.dashboard-page.dark-mode .welcome-section h1 {
+  color: #f9fafb;
+}
+
+.streak-counter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-page.dark-mode .streak-counter {
+  background: rgba(45, 55, 72, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.streak-flame {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #fbbf24, #f59e0b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  animation: flameFlicker 2s ease-in-out infinite;
+}
+
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.6);
+  }
+}
+
+/* Stat Cards */
+.stat-card {
+  border: none;
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-page.dark-mode .stat-card {
+  background: rgba(45, 55, 72, 0.9) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-page.dark-mode .stat-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #4f46e5, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Courses Section */
+.courses-section {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.dashboard-page.dark-mode .courses-section {
+  background: rgba(45, 55, 72, 0.9) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.course-item {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.dashboard-page.dark-mode .course-item {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.course-item:hover {
+  background: rgba(79, 70, 229, 0.05);
+  transform: translateX(5px);
+}
+
+.dashboard-page.dark-mode .course-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.course-title {
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.dashboard-page.dark-mode .course-title {
+  color: #f9fafb;
+}
+
+.course-status {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+}
+
+.progress-info .progress {
+  height: 6px;
+  border-radius: 3px;
+  background: #e5e7eb;
+}
+
+.dashboard-page.dark-mode .progress-info .progress {
+  background: #374151;
+}
+
+.course-actions .btn {
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.course-actions .btn-primary {
+  background: linear-gradient(45deg, #4f46e5, #06b6d4);
+  border: none;
+}
+
+.course-actions .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+}
+
+/* Achievements Section */
+.achievements-section {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.dashboard-page.dark-mode .achievements-section {
+  background: rgba(45, 55, 72, 0.9) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.achievement-item {
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: #f9fafb;
+}
+
+.dashboard-page.dark-mode .achievement-item {
+  border-color: #4b5563;
+  background: #374151;
+}
+
+.achievement-item.unlocked {
+  border-color: #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
+  transform: scale(1);
+}
+
+.achievement-item.unlocked:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.achievement-item.locked {
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+.achievement-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-item h6 {
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.achievement-item .tiny {
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+/* Goals Section */
+.goals-section {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.dashboard-page.dark-mode .goals-section {
+  background: rgba(45, 55, 72, 0.9) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.goal-item .progress {
+  height: 6px;
+  border-radius: 3px;
+  background: #e5e7eb;
+}
+
+.dashboard-page.dark-mode .goal-item .progress {
+  background: #374151;
+}
+
+/* Quick Actions */
+.quick-actions {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.dashboard-page.dark-mode .quick-actions {
+  background: rgba(45, 55, 72, 0.9) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.quick-action-btn {
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-width: 2px;
+}
+
+.quick-action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.quick-action-btn i {
+  font-size: 1.5rem;
+}
+
+/* Card Headers */
+.card-header h5 {
+  color: #1f2937;
+}
+
+.dashboard-page.dark-mode .card-header h5 {
+  color: #f9fafb;
+}
+
+/* Progress Bars */
+.progress-bar {
+  border-radius: 3px;
+  background: linear-gradient(45deg, #4f46e5, #06b6d4);
+}
+
+.progress-bar.bg-success {
+  background: linear-gradient(45deg, #10b981, #059669) !important;
+}
+
+.progress-bar.bg-warning {
+  background: linear-gradient(45deg, #f59e0b, #d97706) !important;
+}
+
+.progress-bar.bg-info {
+  background: linear-gradient(45deg, #06b6d4, #0891b2) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .welcome-section h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .streak-counter {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .stat-card {
+    margin-bottom: 1rem;
+  }
+
+  .courses-section {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .streak-counter {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .streak-flame {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-card h3 {
+    font-size: 2rem;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+
+  .course-item {
+    padding: 1rem !important;
+  }
+
+  .course-item .row {
+    text-align: center;
+  }
+
+  .course-actions {
+    margin-top: 1rem;
+  }
+
+  .achievement-item {
+    margin-bottom: 1rem;
+  }
+
+  .quick-action-btn {
+    padding: 1rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .welcome-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-section .lead {
+    font-size: 1rem;
+  }
+
+  .streak-counter {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .stat-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .course-title {
+    font-size: 1rem;
+  }
+
+  .achievement-item {
+    padding: 1rem !important;
+  }
+
+  .achievement-item h6 {
+    font-size: 0.75rem;
+  }
+
+  .achievement-item .tiny {
+    font-size: 0.65rem;
+  }
+
+  .quick-action-btn {
+    padding: 1rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .quick-action-btn i {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animation Enhancements */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Loading States */
+.stat-card.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .streak-flame,
+  .achievement-item,
+  .quick-action-btn,
+  .course-item {
+    animation: none;
+    transition: none;
+  }
+
+  .stat-card:hover,
+  .achievement-item:hover,
+  .quick-action-btn:hover,
+  .course-item:hover {
+    transform: none;
+  }
+}
+
+/* Focus States */
+.stat-card:focus-within,
+.achievement-item:focus,
+.quick-action-btn:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.dashboard-page.dark-mode .stat-card:focus-within,
+.dashboard-page.dark-mode .achievement-item:focus,
+.dashboard-page.dark-mode .quick-action-btn:focus {
+  outline-color: #06b6d4;
+}
+
+/* Custom Scrollbar */
+.courses-section .card-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.courses-section .card-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.courses-section .card-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.courses-section .card-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Performance Optimizations */
+.stat-card,
+.achievement-item,
+.course-item {
+  will-change: transform;
+}
+
+/* Badge Enhancements */
+.course-status.bg-success {
+  background: linear-gradient(45deg, #10b981, #059669) !important;
+}
+
+.course-status.bg-secondary {
+  background: linear-gradient(45deg, #6b7280, #4b5563) !important;
+}
+
+/* Hover Effects for Interactive Elements */
+.course-item .course-title:hover {
+  color: #4f46e5;
+  transition: color 0.3s ease;
+}
+
+.dashboard-page.dark-mode .course-item .course-title:hover {
+  color: #06b6d4;
+}

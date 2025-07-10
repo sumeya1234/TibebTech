@@ -295,7 +295,7 @@ const Courses = () => {
         )}
         
         <div className="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
-          <Button variant="outline-primary" size="lg">
+          <Button variant="outline-primary" size="lg" href="/courses">
             <i className="bi bi-collection-play me-2"></i>
             View All Courses
           </Button>

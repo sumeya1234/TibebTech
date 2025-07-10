@@ -1,0 +1,417 @@
+/* Auth Page Layout */
+.auth-page {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.auth-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: -2;
+}
+
+.auth-page.dark-mode .auth-background {
+  background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);
+}
+
+.auth-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(120, 200, 255, 0.3) 0%, transparent 50%);
+  z-index: -1;
+}
+
+.auth-container {
+  z-index: 1;
+}
+
+/* Auth Card */
+.auth-card {
+  border: none;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.95) !important;
+  animation: slideInUp 0.6s ease-out;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.auth-page.dark-mode .auth-card {
+  background: rgba(33, 37, 41, 0.95) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Auth Logo */
+.auth-logo {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #4f46e5, #06b6d4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+  animation: logoFloat 2s ease-in-out infinite;
+}
+
+/* Social Login Buttons */
+.social-btn {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-page.dark-mode .social-btn {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Divider */
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.divider span {
+  background: inherit;
+  padding: 0 1rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.auth-page.dark-mode .divider::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+/* Form Controls */
+.form-control-custom {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.form-control-custom:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+  background: white;
+}
+
+.auth-page.dark-mode .form-control-custom {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.auth-page.dark-mode .form-control-custom:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #06b6d4;
+  color: white;
+}
+
+.auth-page.dark-mode .form-control-custom::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Password Input Group */
+.password-input-group {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #6c757d;
+  padding: 0.25rem;
+  z-index: 5;
+}
+
+.password-toggle:hover {
+  color: #4f46e5;
+}
+
+.auth-page.dark-mode .password-toggle {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.auth-page.dark-mode .password-toggle:hover {
+  color: #06b6d4;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+  margin-top: 0.5rem;
+}
+
+.password-strength-bar {
+  height: 4px;
+  background: #e9ecef;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.password-strength-fill {
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.strength-1 { background: #dc3545; }
+.strength-2 { background: #fd7e14; }
+.strength-3 { background: #ffc107; }
+.strength-4 { background: #28a745; }
+.strength-5 { background: #20c997; }
+
+.password-strength small {
+  font-weight: 500;
+}
+
+.password-strength small.strength-1 { color: #dc3545; }
+.password-strength small.strength-2 { color: #fd7e14; }
+.password-strength small.strength-3 { color: #ffc107; }
+.password-strength small.strength-4 { color: #28a745; }
+.password-strength small.strength-5 { color: #20c997; }
+
+/* Form Labels */
+.form-label {
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.auth-page.dark-mode .form-label {
+  color: #e5e7eb;
+}
+
+/* Checkboxes */
+.remember-me,
+.terms-checkbox {
+  margin-bottom: 0;
+}
+
+.remember-me .form-check-input,
+.terms-checkbox .form-check-input {
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.remember-me .form-check-input:checked,
+.terms-checkbox .form-check-input:checked {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.auth-page.dark-mode .remember-me .form-check-input,
+.auth-page.dark-mode .terms-checkbox .form-check-input {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Links */
+.forgot-password-link,
+.signup-link,
+.terms-link {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.forgot-password-link:hover,
+.signup-link:hover,
+.terms-link:hover {
+  color: #3730a3;
+  text-decoration: underline;
+}
+
+.auth-page.dark-mode .forgot-password-link,
+.auth-page.dark-mode .signup-link,
+.auth-page.dark-mode .terms-link {
+  color: #06b6d4;
+}
+
+.auth-page.dark-mode .forgot-password-link:hover,
+.auth-page.dark-mode .signup-link:hover,
+.auth-page.dark-mode .terms-link:hover {
+  color: #0891b2;
+}
+
+/* Submit Button */
+.auth-submit-btn {
+  background: linear-gradient(45deg, #4f46e5, #06b6d4);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  color: white;
+  text-transform: none;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(45deg, #3730a3, #0891b2);
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-card {
+    margin: 1rem;
+    border-radius: 16px;
+  }
+
+  .auth-logo {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .form-control-custom {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .auth-submit-btn {
+    padding: 0.7rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .social-btn {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-page {
+    padding: 1rem 0;
+  }
+
+  .auth-card .card-body {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .auth-logo {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+
+/* Form Validation Styling */
+.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Loading State */
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .auth-card,
+  .auth-logo,
+  .social-btn,
+  .auth-submit-btn {
+    animation: none;
+    transition: none;
+  }
+
+  .social-btn:hover,
+  .auth-submit-btn:hover {
+    transform: none;
+  }
+}
+
+/* Focus styles for better accessibility */
+.form-control-custom:focus,
+.social-btn:focus,
+.auth-submit-btn:focus,
+.password-toggle:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.auth-page.dark-mode .form-control-custom:focus,
+.auth-page.dark-mode .social-btn:focus,
+.auth-page.dark-mode .auth-submit-btn:focus,
+.auth-page.dark-mode .password-toggle:focus {
+  outline-color: #06b6d4;
+}

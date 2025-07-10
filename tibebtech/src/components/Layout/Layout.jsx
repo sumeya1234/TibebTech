@@ -1,17 +1,15 @@
-import React from 'react'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
+import React from 'react';
+import Header from '../Header/Header';
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
-    <div className="d-flex flex-column min-vh-100">
-      <Header/>
-      <main className="flex-grow-1">
+    <div>
+      <Header />
+      <main>
         {children}
       </main>
-      <Footer/>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
