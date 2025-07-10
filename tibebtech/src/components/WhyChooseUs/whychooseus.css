@@ -1,0 +1,12 @@
+.card-hover {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.4) !important;
+}
+[data-aos] {
+  will-change: transform, opacity;
+}
