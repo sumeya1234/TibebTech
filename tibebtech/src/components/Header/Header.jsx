@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { useTheme } from "../../context/ThemeContext";
 
 export default function Header() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("bg-dark", "text-light");
-    } else {
-      document.body.classList.remove("bg-dark", "text-light");
-    }
-  }, [darkMode]);
+  const { darkMode, toggleTheme } = useTheme();
 
   return (
     <Navbar expand="lg" className={`shadow-sm px-3 ${darkMode ? "bg-dark" : "bg-light"}`}>
@@ -30,7 +22,7 @@ export default function Header() {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                setDarkMode(!darkMode);
+                toggleTheme();
               }}
               className={darkMode ? "text-light" : "text-dark"}
             >
