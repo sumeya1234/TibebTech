@@ -33,16 +33,16 @@ const Banner = () => {
               <div className="banner-stats mt-4">
                 <Row className="text-center text-lg-start">
                   <Col xs={4}>
-                    <h4 className="text-primary fw-bold">50+</h4>
-                    <small className="text-white-50">Courses</small>
+                    <h4 className="banner-stats-number fw-bold">50+</h4>
+                    <small className="banner-stats-label">Courses</small>
                   </Col>
                   <Col xs={4}>
-                    <h4 className="text-primary fw-bold">10K+</h4>
-                    <small className="text-white-50">Students</small>
+                    <h4 className="banner-stats-number fw-bold">10K+</h4>
+                    <small className="banner-stats-label">Students</small>
                   </Col>
                   <Col xs={4}>
-                    <h4 className="text-primary fw-bold">4.8★</h4>
-                    <small className="text-white-50">Rating</small>
+                    <h4 className="banner-stats-number fw-bold">4.8★</h4>
+                    <small className="banner-stats-label">Rating</small>
                   </Col>
                 </Row>
               </div>
@@ -62,7 +62,7 @@ const Banner = () => {
                 <i className="bi bi-code-slash text-info"></i>
               </div>
               <div className="floating-element floating-element-3">
-                <i className="bi bi-graduation-cap text-success"></i>
+                <i className="bi bi-award text-success"></i>
               </div>
             </div>
           </Col>
