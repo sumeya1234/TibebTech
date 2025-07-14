@@ -1,4 +1,5 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 
 export default function Header() {
@@ -15,8 +16,8 @@ export default function Header() {
 
         <Navbar.Collapse id="main-navbar">
           <Nav className="ms-auto">
-            <Nav.Link href="#" className={darkMode ? "text-light" : "text-dark"}>Home</Nav.Link>
-            <Nav.Link href="#" className={darkMode ? "text-light" : "text-dark"}>Courses</Nav.Link>
+            <Nav.Link as={Link} to="/" className={darkMode ? "text-light" : "text-dark"}>Home</Nav.Link>
+            <Nav.Link as={Link} to="/courses" className={darkMode ? "text-light" : "text-dark"}>Courses</Nav.Link>
             <Nav.Link href="#" className={darkMode ? "text-light" : "text-dark"}>Dashboard</Nav.Link>
             <Nav.Link
               href="#"

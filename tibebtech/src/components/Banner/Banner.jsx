@@ -1,10 +1,12 @@
 import React from 'react'
 import { Container, Button, Row, Col } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 import { useTheme } from '../../context/ThemeContext'
 import './banner.css'
 
 const Banner = () => {
   const { darkMode } = useTheme();
+  const navigate = useNavigate();
   
   return (
     <div className={`banner-section ${darkMode ? 'dark-mode' : 'light-mode'}`}>
@@ -25,7 +27,12 @@ const Banner = () => {
                   <i className="bi bi-play-circle me-2"></i>
                   Start Learning
                 </Button>
-                <Button variant="outline-light" size="lg" className="mb-2">
+                <Button 
+                  variant="outline-light" 
+                  size="lg" 
+                  className="mb-2"
+                  onClick={() => navigate('/courses')}
+                >
                   <i className="bi bi-collection-play me-2"></i>
                   Browse Courses
                 </Button>

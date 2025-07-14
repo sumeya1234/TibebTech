@@ -9,6 +9,55 @@
   background: #1e293b;
 }
 
+/* Course Detail Header */
+.course-detail-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.course-detail-page.dark-mode .course-detail-header {
+  border-bottom-color: #475569;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.course-detail-header h1 {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.course-detail-page.dark-mode .course-detail-header h1 {
+  color: #f1f5f9;
+}
+
+.course-detail-header .btn-outline-secondary {
+  border-color: #64748b;
+  color: #64748b;
+}
+
+.course-detail-header .btn-outline-secondary:hover {
+  background-color: #64748b;
+  border-color: #64748b;
+  color: white;
+}
+
+.course-detail-page.dark-mode .course-detail-header .btn-outline-secondary {
+  border-color: #94a3b8;
+  color: #94a3b8;
+}
+
+.course-detail-page.dark-mode .course-detail-header .btn-outline-secondary:hover {
+  background-color: #94a3b8;
+  border-color: #94a3b8;
+  color: #1e293b;
+}
+
+.text-light-50 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
 /* Video Player Section */
 .video-player-section {
   position: relative;

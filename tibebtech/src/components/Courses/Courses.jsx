@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Button, Form, Badge } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './courses.css';
@@ -9,6 +10,7 @@ import { useTheme } from '../../context/ThemeContext';
 
 const Courses = () => {
   const { darkMode } = useTheme();
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedDifficulty, setSelectedDifficulty] = useState('All');
   const [filteredCourses, setFilteredCourses] = useState([]);
@@ -177,12 +179,10 @@ const Courses = () => {
                   <Button 
                     variant="primary" 
                     className="mt-auto"
-                    href={`https://www.youtube.com/watch?v=${course.videoId}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={() => navigate(`/course/${course.id}`)}
                   >
                     <i className="bi bi-play me-2"></i>
-                    Watch Course
+                    Start Course
                   </Button>
                 </Card.Body>
               </Card>
@@ -197,13 +197,7 @@ const Courses = () => {
             <p className={darkMode ? 'text-light-50' : 'text-muted'}>Try adjusting your filters to see more results.</p>
           </div>
         )}
-        
-        <div className="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
-          <Button variant="outline-primary" size="lg">
-            <i className="bi bi-collection-play me-2"></i>
-            View All Courses
-          </Button>
-        </div>
+
       </Container>
     </section>
   );

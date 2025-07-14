@@ -122,6 +122,29 @@ const CourseDetail = () => {
 
   return (
     <div className={`course-detail-page ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+      {/* Navigation Header */}
+      <div className={`course-detail-header ${darkMode ? 'bg-dark' : 'bg-light'} border-bottom`}>
+        <Container className="py-3">
+          <div className="d-flex align-items-center">
+            <Button 
+              variant="outline-secondary" 
+              size="sm" 
+              onClick={() => navigate('/courses')}
+              className="me-3"
+            >
+              <i className="bi bi-arrow-left me-2"></i>
+              Back to Courses
+            </Button>
+            <div>
+              <h1 className="h4 mb-0">{course.title}</h1>
+              <small className={`${darkMode ? 'text-light-50' : 'text-muted'}`}>
+                By {course.instructor} • {course.duration} • {course.level}
+              </small>
+            </div>
+          </div>
+        </Container>
+      </div>
+      
       <Container fluid className="p-0">
         <Row className="g-0">
           {/* Main Content Area */}
