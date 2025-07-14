@@ -105,3 +105,34 @@
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
 }
+
+/* Dark Mode Support */
+.bg-dark .course-card {
+  background-color: #495057 !important;
+  border-color: #6c757d !important;
+}
+
+.bg-dark .course-card:hover {
+  box-shadow: 0 0.75rem 1.5rem rgba(255, 255, 255, 0.1) !important;
+}
+
+.bg-dark .form-select-custom {
+  background-color: #495057;
+  border-color: #6c757d;
+  color: #ffffff;
+}
+
+.bg-dark .form-select-custom:focus {
+  background-color: #495057;
+  border-color: #0d6efd;
+  color: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.bg-dark .course-meta {
+  border-top-color: #6c757d;
+}
+
+.text-light-50 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}

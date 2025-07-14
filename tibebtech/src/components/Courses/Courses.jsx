@@ -4,9 +4,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './courses.css';
 import { featuredCourses } from '../../data/courses';
+import { useTheme } from '../../context/ThemeContext';
 
 
 const Courses = () => {
+  const { darkMode } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedDifficulty, setSelectedDifficulty] = useState('All');
   const [filteredCourses, setFilteredCourses] = useState([]);
@@ -55,11 +57,11 @@ const Courses = () => {
   };
 
   return (
-    <section className="py-5">
+    <section className={`py-5 ${darkMode ? 'bg-dark text-light' : 'bg-white'}`}>
       <Container>
         <div className="text-center mb-5" data-aos="fade-up">
           <h2 className="fw-bold mb-3">Featured Courses</h2>
-          <p className="lead text-muted">
+          <p className={`lead ${darkMode ? 'text-light-50' : 'text-muted'}`}>
             Discover our most popular courses with real video content from industry experts
           </p>
         </div>
@@ -102,7 +104,7 @@ const Courses = () => {
 
         {/* Results Count */}
         <div className="mb-4" data-aos="fade-up" data-aos-delay="150">
-          <p className="text-muted">
+          <p className={darkMode ? 'text-light-50' : 'text-muted'}>
             Showing <strong>{filteredCourses.length}</strong> courses
             {selectedCategory !== 'All' && (
               <Badge bg="primary" className="ms-2">
@@ -122,7 +124,7 @@ const Courses = () => {
           {filteredCourses.map((course, index) => (
             <Col key={course.id} xs={12} md={6} lg={4}>
               <Card 
-                className="h-100 course-card shadow-sm rounded-4"
+                className={`h-100 course-card shadow-sm rounded-4 ${darkMode ? 'bg-secondary text-light border-secondary' : 'bg-white'}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
@@ -148,22 +150,26 @@ const Courses = () => {
                     <Badge className={getDifficultyColor(course.level)}>
                       {course.level}
                     </Badge>
-                    <Badge bg="light" text="dark" className="ms-2">
+                    <Badge 
+                      bg={darkMode ? "secondary" : "light"} 
+                      text={darkMode ? "light" : "dark"} 
+                      className="ms-2"
+                    >
                       <i className={`${getCategoryIcon(course.category)} me-1`}></i>
                       {course.category}
                     </Badge>
                   </div>
                   <Card.Title className="fw-semibold h5">{course.title}</Card.Title>
-                  <Card.Text className="text-muted flex-grow-1 small">
+                  <Card.Text className={`${darkMode ? 'text-light-50' : 'text-muted'} flex-grow-1 small`}>
                     {course.description}
                   </Card.Text>
                   <div className="course-meta mb-3">
-                    <small className="text-muted">
+                    <small className={darkMode ? 'text-light-50' : 'text-muted'}>
                       <i className="bi bi-person-circle me-1"></i>
                       {course.instructor}
                     </small>
                     <br />
-                    <small className="text-muted">
+                    <small className={darkMode ? 'text-light-50' : 'text-muted'}>
                       <i className="bi bi-eye me-1"></i>
                       {course.views} views
                     </small>
@@ -186,9 +192,9 @@ const Courses = () => {
 
         {filteredCourses.length === 0 && (
           <div className="text-center py-5" data-aos="fade-up">
-            <i className="bi bi-search display-1 text-muted"></i>
-            <h4 className="text-muted mt-3">No courses found</h4>
-            <p className="text-muted">Try adjusting your filters to see more results.</p>
+            <i className={`bi bi-search display-1 ${darkMode ? 'text-light-50' : 'text-muted'}`}></i>
+            <h4 className={`${darkMode ? 'text-light-50' : 'text-muted'} mt-3`}>No courses found</h4>
+            <p className={darkMode ? 'text-light-50' : 'text-muted'}>Try adjusting your filters to see more results.</p>
           </div>
         )}
         
