@@ -159,17 +159,17 @@ const Courses = () => {
                       {course.category}
                     </Badge>
                   </div>
-                  <Card.Title className="fw-semibold h5">{course.title}</Card.Title>
-                  <Card.Text className={`${darkMode ? 'text-light-50' : 'text-muted'} flex-grow-1 small`}>
+                  <Card.Title className={`fw-semibold h5 ${darkMode ? 'text-white' : 'text-dark'}`}>{course.title}</Card.Title>
+                  <Card.Text className={`${darkMode ? 'text-light' : 'text-muted'} flex-grow-1 small`}>
                     {course.description}
                   </Card.Text>
-                  <div className="course-meta mb-3">
-                    <small className={darkMode ? 'text-light-50' : 'text-muted'}>
+                  <div className={`course-meta mb-3 ${darkMode ? 'course-meta-dark' : ''}`}>
+                    <small className={darkMode ? 'text-light-emphasis' : 'text-muted'}>
                       <i className="bi bi-person-circle me-1"></i>
                       {course.instructor}
                     </small>
                     <br />
-                    <small className={darkMode ? 'text-light-50' : 'text-muted'}>
+                    <small className={darkMode ? 'text-light-emphasis' : 'text-muted'}>
                       <i className="bi bi-eye me-1"></i>
                       {course.views} views
                     </small>

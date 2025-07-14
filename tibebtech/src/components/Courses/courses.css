@@ -108,12 +108,14 @@
 
 /* Dark Mode Support */
 .bg-dark .course-card {
-  background-color: #495057 !important;
-  border-color: #6c757d !important;
+  background-color: #343a40 !important;
+  border-color: #495057 !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3) !important;
 }
 
 .bg-dark .course-card:hover {
-  box-shadow: 0 0.75rem 1.5rem rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.4) !important;
+  background-color: #495057 !important;
 }
 
 .bg-dark .form-select-custom {
@@ -130,9 +132,53 @@
 }
 
 .bg-dark .course-meta {
-  border-top-color: #6c757d;
+  border-top-color: #495057;
+}
+
+.course-meta-dark {
+  border-top-color: #495057 !important;
 }
 
 .text-light-50 {
   color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.text-light-emphasis {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Enhanced Dark Mode Course Details */
+.bg-dark .course-card .card-title {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.bg-dark .course-card .card-text {
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.5;
+}
+
+.bg-dark .course-meta small {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.bg-dark .course-meta i {
+  color: #60a5fa !important;
+}
+
+/* Course Card Content Spacing */
+.bg-dark .course-card .card-body {
+  padding: 1.25rem;
+}
+
+.bg-dark .course-card .card-title {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+/* Badge improvements for dark mode */
+.bg-dark .badge.bg-light {
+  background-color: #495057 !important;
+  color: #ffffff !important;
+  border: 1px solid #6c757d;
 }
