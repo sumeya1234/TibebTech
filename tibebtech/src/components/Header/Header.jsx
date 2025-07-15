@@ -6,16 +6,21 @@ import "./header.css";
 
 export default function Header() {
   const { darkMode, toggleTheme } = useTheme();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleNavClick = () => {
+    setExpanded(false);
   };
 
   return (
-    <Navbar expand="lg" className={`custom-navbar shadow-sm ${darkMode ? "navbar-dark" : "navbar-light"}`}>
+    <Navbar 
+      expand="lg" 
+      expanded={expanded}
+      onToggle={setExpanded}
+      className={`custom-navbar shadow-sm ${darkMode ? "navbar-dark" : "navbar-light"}`}
+    >
       <Container fluid className="px-4">
-        <Navbar.Brand as={Link} to="/" className="brand-logo">
+        <Navbar.Brand as={Link} to="/" className="brand-logo" onClick={handleNavClick}>
           <div className="logo-container">
             <div className="logo-icon">
               <i className="bi bi-mortarboard-fill"></i>
@@ -24,31 +29,22 @@ export default function Header() {
           </div>
         </Navbar.Brand>
 
-        {/* Custom Hamburger Button */}
-        <button 
-          className={`hamburger-btn ${isMenuOpen ? 'active' : ''} ${darkMode ? 'dark' : 'light'}`}
-          onClick={toggleMenu}
-          aria-label="Toggle navigation"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#main-navbar"
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
+        <Navbar.Toggle 
+          aria-controls="main-navbar"
+          className={`${darkMode ? 'navbar-dark' : 'navbar-light'}`}
+        />
 
         <Navbar.Collapse id="main-navbar">
           <Nav className="ms-auto align-items-center">
-            <Nav.Link as={Link} to="/" className="nav-link-custom">
+            <Nav.Link as={Link} to="/" className="nav-link-custom" onClick={handleNavClick}>
               <i className="bi bi-house me-1"></i>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/courses" className="nav-link-custom">
+            <Nav.Link as={Link} to="/courses" className="nav-link-custom" onClick={handleNavClick}>
               <i className="bi bi-collection-play me-1"></i>
               Courses
             </Nav.Link>
-            <Nav.Link as={Link} to="/dashboard" className="nav-link-custom">
+            <Nav.Link as={Link} to="/dashboard" className="nav-link-custom" onClick={handleNavClick}>
               <i className="bi bi-grid-3x3-gap me-1"></i>
               Dashboard
             </Nav.Link>
@@ -74,6 +70,7 @@ export default function Header() {
                 variant="outline-primary" 
                 size="sm" 
                 className="me-2 auth-btn"
+                onClick={handleNavClick}
               >
                 <i className="bi bi-box-arrow-in-right me-1"></i>
                 Login
@@ -84,6 +81,7 @@ export default function Header() {
                 variant="primary" 
                 size="sm"
                 className="auth-btn"
+                onClick={handleNavClick}
               >
                 <i className="bi bi-person-plus me-1"></i>
                 Sign Up
