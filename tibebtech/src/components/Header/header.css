@@ -1,0 +1,306 @@
+/* Custom Navbar Styling */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.custom-navbar.navbar-dark {
+  background: rgba(33, 37, 41, 0.95) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Logo Styling */
+.brand-logo {
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #4f46e5, #06b6d4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.logo-icon:hover {
+  transform: rotate(10deg);
+}
+
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #4f46e5, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+/* Beautiful Hamburger Menu */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: #4f46e5;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-origin: center;
+}
+
+.hamburger-btn.dark .hamburger-line {
+  background: #fff;
+}
+
+/* Hamburger Animation */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Navigation Links */
+.nav-link-custom {
+  font-weight: 500;
+  padding: 0.75rem 1rem !important;
+  margin: 0 0.25rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #374151 !important;
+  text-decoration: none;
+  position: relative;
+}
+
+.navbar-dark .nav-link-custom {
+  color: #e5e7eb !important;
+}
+
+.nav-link-custom:hover {
+  background: rgba(79, 70, 229, 0.1);
+  color: #4f46e5 !important;
+  transform: translateY(-1px);
+}
+
+.navbar-dark .nav-link-custom:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #06b6d4 !important;
+}
+
+.nav-link-custom.active {
+  background: rgba(79, 70, 229, 0.15);
+  color: #4f46e5 !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  padding: 0.5rem !important;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(79, 70, 229, 0.1);
+  transform: rotate(180deg);
+}
+
+.navbar-dark .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auth-btn {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-width: 2px;
+}
+
+.auth-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-outline-primary.auth-btn {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+.btn-outline-primary.auth-btn:hover {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: white;
+}
+
+.btn-primary.auth-btn {
+  background: linear-gradient(45deg, #4f46e5, #06b6d4);
+  border: none;
+}
+
+.btn-primary.auth-btn:hover {
+  background: linear-gradient(45deg, #3730a3, #0891b2);
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    margin-top: 1rem;
+    padding: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-dark .navbar-collapse {
+    background: rgba(33, 37, 41, 0.98);
+  }
+
+  .nav-link-custom {
+    margin: 0.25rem 0;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .auth-buttons {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    justify-content: center;
+  }
+
+  .navbar-dark .auth-buttons {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .auth-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .theme-toggle {
+    align-self: center;
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-navbar .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .brand-text {
+    font-size: 1.3rem;
+  }
+
+  .logo-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .auth-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Smooth scrolling enhancement */
+.custom-navbar a {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.hamburger-btn:focus,
+.nav-link-custom:focus,
+.auth-btn:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Loading animation for brand logo */
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.logo-icon {
+  animation: logoFloat 2s ease-in-out infinite;
+}
+
+/* Hover effect for mobile menu */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .navbar-collapse.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
